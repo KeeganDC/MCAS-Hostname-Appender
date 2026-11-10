@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "MCAS Hostname Appender",
+  "version": "1.0.0",
+  "description": "Appends .mcas.ms only for website hostnames you explicitly allow.",
+  "action": {
+    "default_title": "MCAS Hostname Appender",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "optional_host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

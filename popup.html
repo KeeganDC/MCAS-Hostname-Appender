@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCAS Hostname Appender</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="hero">
+        <div class="hero-mark" aria-hidden="true">+</div>
+        <div>
+          <p class="eyebrow">MCAS routing</p>
+          <h1>Hostname Appender</h1>
+        </div>
+      </header>
+
+      <p class="intro">
+        Redirect only the websites you add to their <code>.mcas.ms</code> address.
+      </p>
+
+      <form id="allowlist-form" class="add-form" novalidate>
+        <label for="hostname-input">Hostname or full URL</label>
+        <div class="input-row">
+          <input
+            id="hostname-input"
+            name="hostname"
+            type="text"
+            autocomplete="off"
+            autocapitalize="none"
+            autocorrect="off"
+            spellcheck="false"
+            placeholder="contoso.sharepoint.com"
+            aria-describedby="form-feedback"
+            required
+          />
+          <button id="add-button" type="submit">Add site</button>
+        </div>
+        <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
+      </form>
+
+      <section class="current-site panel" aria-labelledby="current-site-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Current tab</p>
+            <h2 id="current-site-title">Quick add</h2>
+          </div>
+          <span id="current-site-status" class="status-chip">Checking</span>
+        </div>
+        <p id="current-hostname" class="current-hostname">Checking this tab…</p>
+        <button id="add-current-tab" class="secondary-button" type="button" disabled>
+          Add current site
+        </button>
+      </section>
+
+      <section class="allowlist" aria-labelledby="allowlist-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Allowlist</p>
+            <h2 id="allowlist-title">Redirected sites</h2>
+          </div>
+          <span id="allowlist-count" class="count">0</span>
+        </div>
+        <p id="empty-state" class="empty-state">No sites have been added yet.</p>
+        <ul id="allowlist-items" class="allowlist-items" aria-live="polite"></ul>
+      </section>
+
+      <footer>
+        Top-level HTTP(S) navigations only. Your allowlist stays on this device.
+      </footer>
+    </main>
+
+    <script src="hostname-utils.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
