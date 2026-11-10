@@ -2,14 +2,25 @@
 
 MCAS Hostname Appender is a Chrome Manifest V3 extension that appends `.mcas.ms` only to website hostnames you explicitly allowlist. It is the inverse of an auto-remover: a site is left unchanged unless you add its exact hostname in the popup.
 
-## Install unpacked in Chrome
+## Install from a release
+
+1. Open the [Releases page](https://github.com/KeeganDC/MCAS-Hostname-Appender/releases).
+2. Download the ZIP asset from the latest release. For the first release, this is `MCAS-Hostname-Appender-v1.0.0.zip`.
+3. Extract the ZIP file.
+4. Open `chrome://extensions` in Google Chrome.
+5. Turn on **Developer mode**.
+6. Select **Load unpacked**.
+7. Select the extracted directory that directly contains `manifest.json` (for example, `MCAS-Hostname-Appender-v1.0.0/`).
+
+Optionally pin **MCAS Hostname Appender** from Chrome's Extensions menu for faster access.
+
+## Install from a local checkout
 
 1. Download or clone this repository.
 2. Open `chrome://extensions` in Google Chrome.
 3. Turn on **Developer mode**.
 4. Select **Load unpacked**.
 5. Choose the repository root directory: the folder that contains `manifest.json`.
-6. Optionally pin **MCAS Hostname Appender** from Chrome's Extensions menu for faster access.
 
 ## Use
 
