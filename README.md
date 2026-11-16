@@ -49,7 +49,7 @@ The protocol, optional port, path, query string, and fragment are preserved. It 
 
 ## Privacy
 
-This extension has no analytics, tracking, network calls, remote configuration, or browsing-history collection. The allowlist is stored locally in Chrome extension storage on the current device. Chrome performs the redirects declaratively; the extension does not inspect page content or transmit the websites you visit.
+This extension has no analytics, tracking, remote configuration, or browsing-history collection. The allowlist is stored locally in Chrome extension storage on the current device. Chrome performs redirects declaratively; the extension does not inspect page content or transmit browsing data for analytics. A redirected navigation still connects to the selected `.mcas.ms` destination.
 
 ## Permissions
 
@@ -72,3 +72,5 @@ npm test
 ```
 
 The tests cover hostname/URL normalization, exact-host matching, permission-origin construction, and declarative redirect-rule construction.
+
+See [LEARNINGS.md](LEARNINGS.md) for implementation and release lessons.
